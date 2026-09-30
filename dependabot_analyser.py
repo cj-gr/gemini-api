@@ -107,6 +107,14 @@ def handle_security_alert(url: str):
         4. **Recommendation:**
         (Provide immediate next steps, such as: Upgrade immediately, Mitigate via environment configuration, or Safe to ignore due to development-only dependency scope).
 
+        5. **Upgrade Instructions:**
+        [CRITICAL CONDITION: Render section 5 ONLY IF section 4 is "Upgrade immediately". Omit this section entirely if the recommendation is to mitigate or ignore.]
+        (Provide actionable steps to permanently update `package.json` (or the equivalent manifest file like `requirements.txt`, `Cargo.toml`, or `go.mod`) and its lockfile.
+        For Node.js/npm ecosystems:
+        1. Provide CLI commands that save the explicit version directly to dependencies/devDependencies in `package.json` (e.g., using `--save-exact` or explicit version specs).
+        2. Show how to manually edit `package.json` directly if CLI tools are restricted in CI/CD environments.
+        3. Include commands to regenerate lockfiles (`package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`).)
+        
         CRITICAL FORMATTING RULE: Whenever you use bold text markdown (**like this**) to highlight a line or a point header, you MUST start the text that follows it on a brand-new line. Never continue prose on the same line as a bold header. Keep your response highly structured, objective, and brief.
         """
 
